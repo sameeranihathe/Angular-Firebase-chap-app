@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import {  FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessage } from '../models/chat-message.model';
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
+import { query } from '@angular/core/src/animation/dsl';
 
 @Injectable()
 export class ChatService {
@@ -43,9 +46,11 @@ export class ChatService {
   
   getMessages(): FirebaseListObservable<ChatMessage[]> {
     // query to create our message feed binding
-    return this.db.list('messages', 
-    );
-    }
+    return this.db.list('messages')
+    
+    
+    
+    };
 
   getTimeStamp(){
     const now = new Date();
