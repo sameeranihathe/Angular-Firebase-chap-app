@@ -21,11 +21,11 @@ export class ChatService {
     private db: AngularFireDatabase,
     private afAuth: AngularFireAuth
   ) { 
-    this.afAuth.authState.subscribe(auth =>{
-      if (auth !== undefined && auth !== null) {
-          this.user = firebase.auth;
-      }
-    })
+    // this.afAuth.authState.subscribe(auth =>{
+    //   if (auth !== undefined && auth !== null) {
+    //       this.user = firebase.auth;
+    //   }
+    // })
   }
   
   sendMessage(msg: string){
